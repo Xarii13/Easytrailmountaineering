@@ -150,6 +150,7 @@ header nav a {
   font-weight: 600;
   padding: 8px 14px;
   border-radius: 999px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 header nav a:hover {
@@ -573,7 +574,8 @@ footer {
   }
 
   .card,
-  .btn {
+  .btn,
+  header nav a {
     transition: none;
   }
 
