@@ -73,6 +73,13 @@ h5 {
   line-height: 1.25;
 }
 
+h5 .sub {
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 0.85em;
+  font-weight: 400;
+  color: var(--stone);
+}
+
 :focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 3px;
@@ -190,32 +197,30 @@ header nav a.active {
 }
 
 #home {
-    height: 100vh;
-    width: 100%;
-    background:
-        linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0.85),
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.2)
-        ),
-        url("assets/home-backg.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  background:
+    linear-gradient(to right,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.2)),
+    url("assets/home-backg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: max(600px, calc(100vh - 120px));
+  display: flex;
+  align-items: center;
 }
 
 #home h2.tag {
   color: var(--white);
 }
 
-#home h3 {
+#home h1 {
   color: var(--sage);
   font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 14px;
 }
 
 #home .home-text>p {
@@ -316,53 +321,6 @@ header nav a.active {
   background: var(--mist);
 }
 
-.category-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 44px;
-}
-
-.category-nav a {
-  background: var(--white);
-  color: var(--forest);
-  border: 1px solid var(--sage);
-  border-radius: 999px;
-  padding: 10px 20px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.category-nav a:hover {
-  background: var(--forest);
-  color: var(--cream);
-  border-color: var(--forest);
-}
-
-.category {
-  margin-bottom: 56px;
-}
-
-.category:last-child {
-  margin-bottom: 0;
-}
-
-.category-head {
-  border-left: 6px solid var(--orange);
-  padding-left: 16px;
-  margin-bottom: 22px;
-}
-
-.category-head h4 {
-  margin-bottom: 4px;
-}
-
-.category-head p {
-  color: var(--stone);
-  font-size: 1.05rem;
-}
-
 .product-grid,
 .gallery-grid {
   display: grid;
@@ -388,10 +346,6 @@ header nav a.active {
 .badge-intl {
   background: var(--orange);
   color: var(--white);
-}
-
-.use strong {
-  color: var(--forest);
 }
 
 .price {
@@ -495,11 +449,11 @@ footer {
 }
 
 .footer-text {
-  margin-top: 0px;
+  margin-top: 0;
   color: var(--sage);
   font-size: 1.1rem;
   font-family: "Bitter", Georgia, serif;
-  line-height: 1.1px;
+  line-height: 1.6;
 }
 
 .footer-bar {
@@ -541,7 +495,7 @@ footer {
     font-size: 2rem;
   }
 
-  #home h3 {
+  #home h1 {
     font-size: 1.3rem;
   }
 
@@ -584,7 +538,6 @@ footer {
   }
 }
 
-/* category cards and modals */
 
 .category-grid {
   display: grid;
@@ -602,7 +555,6 @@ footer {
   color: var(--orange);
 }
 
-/* #modal-.... */
 .modal {
   display: none;
   position: fixed;
@@ -751,11 +703,25 @@ body {
   view-timeline-inset: 49% 49%;
 }
 
-#home     { view-timeline-name: --tl-home; }
-#about    { view-timeline-name: --tl-about; }
-#products { view-timeline-name: --tl-products; }
-#gallery  { view-timeline-name: --tl-gallery; }
-#contact  { view-timeline-name: --tl-contact; }
+#home {
+  view-timeline-name: --tl-home;
+}
+
+#about {
+  view-timeline-name: --tl-about;
+}
+
+#products {
+  view-timeline-name: --tl-products;
+}
+
+#gallery {
+  view-timeline-name: --tl-gallery;
+}
+
+#contact {
+  view-timeline-name: --tl-contact;
+}
 
 @keyframes nav-active {
 
@@ -772,11 +738,25 @@ body {
     animation-range: cover 0% cover 100%;
   }
 
-  header nav a[href="#home"]     { animation-timeline: --tl-home; }
-  header nav a[href="#about"]    { animation-timeline: --tl-about; }
-  header nav a[href="#products"] { animation-timeline: --tl-products; }
-  header nav a[href="#gallery"]  { animation-timeline: --tl-gallery; }
-  header nav a[href="#contact"]  { animation-timeline: --tl-contact; }
+  header nav a[href="#home"] {
+    animation-timeline: --tl-home;
+  }
+
+  header nav a[href="#about"] {
+    animation-timeline: --tl-about;
+  }
+
+  header nav a[href="#products"] {
+    animation-timeline: --tl-products;
+  }
+
+  header nav a[href="#gallery"] {
+    animation-timeline: --tl-gallery;
+  }
+
+  header nav a[href="#contact"] {
+    animation-timeline: --tl-contact;
+  }
 }
 
 /* default keep home orange if not */
