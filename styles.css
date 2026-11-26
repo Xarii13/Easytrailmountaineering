@@ -658,8 +658,6 @@ body:has(.modal:target) {
   }
 }
 
-/* static cards */
-
 .product-card:hover,
 .gallery-card:hover {
   transform: none;
@@ -688,7 +686,6 @@ body:has(.modal:target) {
   font-size: 1.15rem;
 }
 
-/* orange color pill follow */
 
 body {
   timeline-scope: --tl-home, --tl-about, --tl-products, --tl-gallery, --tl-contact;
